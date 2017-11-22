@@ -1,0 +1,27 @@
+<div class="wikidoc">
+<p><strong>Windows Phone 8.0 Progress Helper Assembly</strong><br>
+<a href="http://temporalwars.com/CodeHelpers/WpProgressBar">http://temporalwars.com/CodeHelpers/WpProgressBar</a><br>
+<br>
+This WP8.0 Progress Helper assembly is used to display progress feedback using the built-in WP progress-bar using a separate thread to avoid visual stalls.<br>
+<br>
+This is one of my first WP8.0 assemblies used to help ease development on Windows Phone. I will be adding additional WP8.0 assemblies in the near future.<br>
+<br>
+I use a default namespace string for all helper assemblies, making it easier to organize and locate assemblies within projects. Each helper assembly will be marked with the following default namespace: &quot;BenScharbach.WP8.Helpers&quot;, with the actual namespace's
+ specific name at the end of the default namespace; for example, 'WPProgressHelper' for this assembly.<br>
+<br>
+Windows Phone 8.0 SDK contains a ProgressIndicator class to communicate with the visual bar at the top of the phone. This built-in bar, located at the top of the phone, allows communication for iteration operations to the end-user.<br>
+<br>
+The ProgressIndicator in Window Phone requires a fully non-blocked UI mode in order to see progress updates in real-time.. Consequently, this requires any calling code to use a separate thread to run their progress iteration tasks. Communication to this ProgressIndicator
+ then must be done through the UI dispatcher thread to achieve the real-time updates end-users demand.
+<br>
+<br>
+To use this helper, create the Progress&lt;generic&gt; instance and pass in the collection of &lt;generic&gt; items via the constructor. Now simply iterate the collection in C# using the Items method call, which will then take care of the per index calls to
+ the ProgressIndicator within the phone.<br>
+<br>
+<em>Note: The calling code should have a thread created; otherwise, the UI updates will be blocked. In a future update, this requirement will be handled by the Progress&lt;generic&gt; class helper.</em><br>
+<br>
+Thanks,<br>
+Ben Scharbach<br>
+<br>
+</p>
+</div><div class="ClearBoth"></div>
